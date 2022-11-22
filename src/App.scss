@@ -1,0 +1,150 @@
+@import "~leaflet/dist/leaflet.css";
+@import "~react-leaflet-markercluster/dist/styles.min.css";
+
+$blue: #18397A;
+$black: black;
+$gray: #757575;
+$white: white;
+$shadow: #0000000A;
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+
+    button {
+      height: 48px;
+      width: fit-content;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 4px;
+      text-transform: uppercase;
+
+      &:hover {
+        opacity: .9;
+        cursor: pointer;
+      }
+    }
+
+    &__first {
+      background: $blue !important;
+      color: white !important;
+    }
+
+    &__second {
+      border: 2px solid $blue !important;
+      color: $blue !important;
+    }
+  }
+}
+
+.ant-modal-mask {
+  background-color: $white !important;
+}
+
+.ant-btn-primary {
+  box-shadow: none;
+}
+
+.mapModal-container {
+  margin-top: 45px;
+  height: 70vh;
+  border-radius: 16px;
+  box-shadow: 0px 4px 24px 0px $shadow;
+
+  &__map {
+    height: 80%;
+    margin: 0 30px;
+    border-radius: 16px;
+
+    img[alt='new mark'] {
+      filter: grayscale(1) !important;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    
+    &__button {
+      float: right;
+      border: none;
+      outline: none;
+      margin: 32px 0;
+      height: 48px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    &__errorText {
+      position: absolute;
+      right: 0;
+      top: 5px;
+      margin: 0;
+      color: red;
+      font-size: smaller;
+    }
+  }
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  border-radius: 12px !important;
+
+  a {
+    border: none !important;
+
+    &:first-child {
+      border-top-left-radius: inherit !important;
+      border-top-right-radius: inherit !important;
+    }
+    &:last-child {
+      border-bottom-left-radius: inherit !important;
+      border-bottom-right-radius: inherit !important;
+    }
+
+    span {
+      padding: 10px 0;
+      color: $gray;
+    }
+  }
+}
+
+.listModal {
+    .row {
+      .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+
+      &:nth-of-type(odd) {
+        margin: 15px 0;
+      }
+    }
+}
+
+.errorModal {
+  &__button {
+    height: 48px !important;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;    
+  }
+  
+  &__text {
+    margin-top: 24px;
+  }
+}
